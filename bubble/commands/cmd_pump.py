@@ -9,7 +9,6 @@ from ..commands.cmd_pull import cli as pull
 from ..commands.cmd_transform import cli as transform
 from ..commands.cmd_push import cli as push
 
-
 @click.command('pump', short_help='Pull, Transform, Push.')
 @click.option('--amount', '-a', type=int, default=-1, help='set the amount to pump')
 @click.option('--index', '-i', type=int, default=-1, help='set the starting index')

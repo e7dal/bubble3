@@ -11,7 +11,7 @@ import path as opath
 from ..cli import pass_bubble
 from ..cli import STAGES
 from ..cli import STEPS as exportables
-from ..util.cli_misc import get_pairs, show_verbose_statistics
+from ..util.cli_misc import get_pairs
 from ..util.generators import get_gen_slice
 from ..util.cli_misc import bubble_lod_load
 
@@ -42,8 +42,8 @@ from ..util.buts import buts
               help='show the (flattened) available keys first selected dict')
 @click.option('--showvalues', '-v', is_flag=True, default=False,
               help='if showkeys, also show the values')
-@click.option('--showallways', '-d', is_flag=True, default=False,
-              help='show (dump) the keys/values allways')
+@click.option('--showalways', '-d', is_flag=True, default=False,
+              help='show (dump) the keys/values always')
 @click.option('--position', '-p', is_flag=True, default=False,
               help='if position, also append the position (index for item in total list)')
 @pass_bubble
@@ -59,7 +59,7 @@ def cli(ctx,
         outputfile,
         showkeys,
         showvalues,
-        showallways,
+        showalways,
         position):
     """Export from memory to format supported by tablib"""
     if not ctx.bubble:
@@ -136,7 +136,7 @@ def cli(ctx,
             data.append(row)
             # todo: count keys, and show all keys in selection: i,a
             if not_shown and showkeys:
-                if not showallways:
+                if not showalways:
                     not_shown = False
                 ks = list(flitem.keys())
                 ks.sort()
@@ -196,4 +196,3 @@ def cli(ctx,
         with open(outputfile, 'wb') as f:
             f.write(enc_formatted)
             ctx.say_green('exported: ' + outputfile)
-    show_verbose_statistics(ctx)

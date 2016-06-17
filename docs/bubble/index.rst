@@ -26,9 +26,9 @@ Automated behave test results, link...
     features/export_escapes
     features/transform_persistent_storage
     features/export_where
-    features/storage_types_bubble
     features/transform_simple_rules
     features/functions
+    features/rules
     features/no_transform
     features/dumbo_installed_site_packages_client
     features/pump_no_transform

@@ -12,7 +12,7 @@ from ..util.cli_misc import bubble_lod_dump, bubble_lod_load
 from ..util.counter import Counter
 
 
-from ..util.cli_misc import update_stats, show_verbose_statistics, make_uniq_for_step
+from ..util.cli_misc import update_stats, make_uniq_for_step
 
 from ..transformer import Transformer
 
@@ -51,33 +51,35 @@ def cli(ctx, amount, index, stage):
 
     path = ctx.home + '/'
 
+    STAGE = None
     RULES = None
     UNIQ_KEYS_PULL = None
     UNIQ_KEYS_PUSH = None
     CLEAN_MISSING_AFTER_SECONDS = None
-    if stage in STAGES:
+    if stage in STAGES and stage in ctx.cfg.CFG:
+        STAGE = ctx.cfg.CFG[stage]
+    if not STAGE:
+        ctx.say_red('There is no STAGE in CFG:' + stage)
+        ctx.say_yellow('please check configuration in ' +
+        ctx.home + '/config/config.yaml')
+        raise click.Abort()
 
-        if stage in ctx.cfg.CFG:
-            STAGE = ctx.cfg.CFG[stage]
-            if 'TRANSFORM' in STAGE:
-                TRANSFORM = ctx.cfg.CFG[stage].TRANSFORM
-            else:
+    if 'TRANSFORM' in STAGE:
+         TRANSFORM = ctx.cfg.CFG[stage].TRANSFORM
+    else:
+         ctx.say_yellow("""There is no transform defined in the configuration, will not transform,
+when pushing the results of step 'pulled' will be read instead of 'push'
+""")
+         raise click.Abort()
 
-                m = 'There is no transform defined in the configuration,'
-                m += 'will not transform,'
-                m += "when pushing the results of step 'pulled'"
-                m += " will be read instead of 'push'"
-                ctx.say_yellow(m)
-                raise click.Abort()
-
-        if 'RULES' in TRANSFORM:
-            RULES = TRANSFORM.RULES
-        if 'UNIQ_KEYS_PULL' in TRANSFORM:
-            UNIQ_KEYS_PULL = TRANSFORM.UNIQ_KEYS_PULL
-        if 'UNIQ_KEYS_PUSH' in TRANSFORM:
-            UNIQ_KEYS_PUSH = TRANSFORM.UNIQ_KEYS_PUSH
-        if 'CLEAN_MISSING_AFTER_SECONDS' in TRANSFORM:
-            CLEAN_MISSING_AFTER_SECONDS = TRANSFORM.CLEAN_MISSING_AFTER_SECONDS
+    if 'RULES' in TRANSFORM:
+        RULES = TRANSFORM.RULES
+    if 'UNIQ_KEYS_PULL' in TRANSFORM:
+        UNIQ_KEYS_PULL = TRANSFORM.UNIQ_KEYS_PULL
+    if 'UNIQ_KEYS_PUSH' in TRANSFORM:
+        UNIQ_KEYS_PUSH = TRANSFORM.UNIQ_KEYS_PUSH
+    if 'CLEAN_MISSING_AFTER_SECONDS' in TRANSFORM:
+        CLEAN_MISSING_AFTER_SECONDS = TRANSFORM.CLEAN_MISSING_AFTER_SECONDS
 
     if not RULES:
         ctx.say_red('There is no TRANSFORM.RULES in stage:' + stage)
@@ -180,6 +182,5 @@ def cli(ctx, amount, index, stage):
     stats['transformed_stat_transformed_count'] = transformed_count.get_total()
 
     update_stats(ctx, stage, stats)
-    show_verbose_statistics(ctx)
 
     return True

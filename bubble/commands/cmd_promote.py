@@ -7,7 +7,7 @@ from ..cli import pass_bubble
 
 from ..cli import STAGES
 from ..util.cli_misc import bubble_lod_load
-from ..util.cli_misc import get_pairs, show_verbose_statistics
+from ..util.cli_misc import get_pairs
 from ..util.generators import get_gen_slice
 from ..util.flat_dict import flat, get_flat_path
 from ..util.buts import buts
@@ -18,7 +18,7 @@ exportables = ['pulled', 'uniq_pull', 'uniq_push',
 
 
 @click.command('promote',
-               short_help='Like Export, but promote from step stage to step stage.(experimental)')
+               short_help='Like Export, but promote from step stage to step stage(experimental)')
 @click.option('--amount',
               '-a',
               type=int,
@@ -63,7 +63,7 @@ exportables = ['pulled', 'uniq_pull', 'uniq_push',
               help='if position, also append the position (index for item in total list)')
 @pass_bubble
 def cli(ctx, amount, index, stage, deststage, stepresult, tostep, select, where, order, position):
-    """Promote data from one stage to another:(experimental)
+    """Promote data from one stage to another(experimental)
 
     First collect the correct information with export,
     and promote result by adjusting command to promote and adding missing options.
@@ -155,5 +155,3 @@ def cli(ctx, amount, index, stage, deststage, stepresult, tostep, select, where,
                 data = data.sort(order[:-2], False)
             if olast2 == ':-':
                 data = data.sort(order[:-2], True)
-
-    show_verbose_statistics(ctx)
