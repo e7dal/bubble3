@@ -31,7 +31,7 @@ Scenario: load mysrclient.py pull and store type jsonlines
                         self.say('BC:yielding:%d %d'%(amount,index),stuff=it,verbosity=100)
                         yield it
             """
-    When I run "bubble -v 100000 -b 100 pull"
+    When I run "bubble pull"
     Then the command output should contain "pulled [100000] objects"
     Then the command output should contain "remember/pulled_DEV.jsonl"
     And the command returncode is "0"
