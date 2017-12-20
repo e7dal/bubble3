@@ -13,48 +13,48 @@ Subpackages
 Submodules
 ----------
 
-bubble.cli module
------------------
+bubble\.cli module
+------------------
 
 .. automodule:: bubble.cli
     :members:
     :undoc-members:
     :show-inheritance:
 
-bubble.functions module
------------------------
+bubble\.functions module
+------------------------
 
 .. automodule:: bubble.functions
     :members:
     :undoc-members:
     :show-inheritance:
 
-bubble.functions_system module
-------------------------------
+bubble\.functions\_system module
+--------------------------------
 
 .. automodule:: bubble.functions_system
     :members:
     :undoc-members:
     :show-inheritance:
 
-bubble.metadata module
-----------------------
+bubble\.metadata module
+-----------------------
 
 .. automodule:: bubble.metadata
     :members:
     :undoc-members:
     :show-inheritance:
 
-bubble.rules module
--------------------
+bubble\.rules module
+--------------------
 
 .. automodule:: bubble.rules
     :members:
     :undoc-members:
     :show-inheritance:
 
-bubble.transformer module
--------------------------
+bubble\.transformer module
+--------------------------
 
 .. automodule:: bubble.transformer
     :members:
