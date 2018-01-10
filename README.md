@@ -6,8 +6,8 @@ Bubble
     :target: http://badge.fury.io/py/bubble
     :alt: PyPI status
 
-.. image:: https://travis-ci.org/e7dal/bubble.png?branch=master
-    :target: https://travis-ci.org/e7dal/bubble
+.. image:: https://travis-ci.org/e7dal/bubble3.png?branch=master
+    :target: https://travis-ci.org/e7dal/bubble3
     :alt: Travis CI status
 
 .. image:: https://readthedocs.org/projects/realopenit-bubble/badge/?version=master
@@ -15,6 +15,8 @@ Bubble
     :alt: Readthedocs Status
 
 Bubble: command line tool, for bubbling information between services
+
+PY3 only version 
 
 * Free software: GPLV3 license
 * Documentation: http://realopenit-bubble.readthedocs.org
@@ -24,7 +26,8 @@ Features
 
 
 Todo
----
+--------
+- remove all PY related ...
 - clean up
 - speed up
 - DRY: Don't repeat yourself
