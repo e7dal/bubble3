@@ -7,8 +7,8 @@ Information describing the project.
 """
 
 # The package name, which is also the 'UNIX name' for the project.
-package = 'bubble'
-project = 'cli tool to bubble information from one to another service, with rule based transformations'
+package = 'bubble3'
+project = 'cli tool to bubble information from one to another service, with rule based transformations, PY3 only version'
 
 #version = '2016.02.23'  #date versioning
 version = "2018.01.10"

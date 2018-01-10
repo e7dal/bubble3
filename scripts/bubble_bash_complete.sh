@@ -5,4 +5,4 @@
 # . /path/to/bubble_bash_complete.sh
 
 
-eval "$(_BUBBLE_COMPLETE=source bubble)"
+eval "$(_BUBBLE_COMPLETE=source bubble3)"

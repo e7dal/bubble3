@@ -58,9 +58,9 @@ Scenario: Given a configuration, add and modify multiple keys
     Given a new working directory
     And a file named "./config_multiple.sh" with:
             """ set -x
-                bubble config -s CFG.BUBBLE.STORAGE_TYPE dataset STRING                              \
-                              -s CFG.BUBBLE.STORAGE_DATASET_ARGS.DS_TYPE sqlite STRING               \
-                              -s CFG.BUBBLE.STORAGE_DATASET_ARGS.DS_BUBBLE_TAG config_command STRING
+                bubble3 config -s CFG.BUBBLE.STORAGE_TYPE dataset STRING                              \
+                               -s CFG.BUBBLE.STORAGE_DATASET_ARGS.DS_TYPE sqlite STRING               \
+                               -s CFG.BUBBLE.STORAGE_DATASET_ARGS.DS_BUBBLE_TAG config_command STRING
             """
 
     When I run "bubble3 init"
