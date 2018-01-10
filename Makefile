@@ -63,8 +63,8 @@ docs:
 	echo "open file://`pwd`/build/docs/html/index.html"
 	echo "open file://`pwd`/build/docs/singlehtml/index.html"
 	echo "man have a look: man build/docs/man/Bubble.1"
-	cp build/docs/man/Bubble.1 bubble/extras/
-	gzip  -f bubble/extras/Bubble.1
+	cp build/docs/man/Bubble.1 bubble3/extras/
+	gzip  -f bubble3/extras/Bubble.1
 
 
 
@@ -83,20 +83,20 @@ install: clean
 
 upload_to_testpypi: clean dist
 	twine upload dist/* -r testpypi
-	echo "please checkout https://testpypi.python.org/pypi/bubble/"
+	echo "please checkout https://testpypi.python.org/pypi/bubble3"
 	echo "for testing: first install the requirements from pypi"
 	echo "pip install -r requirements.txt"
-	echo "pip install  bubble --index https://testpypi.python.org/pypi --upgrade"
+	echo "pip install  bubble3 --index https://testpypi.python.org/pypi --upgrade"
 	echo "looking good? continue with make upload_to_pypi"
 
 
 
 upload_to_pypi:
 	twine upload dist/*
-	echo "please checkout https://pypi.python.org/pypi/bubble/"
+	echo "please checkout https://pypi.python.org/pypi/bubble3"
 	echo "for testing:"
-	echo "pipsi install  bubble --upgrade"
-	echo "pip install  bubble --upgrade"
+	echo "pipsi install  bubble3 --upgrade"
+	echo "pip install  bubble3 --upgrade"
 
 compile_requirements:
 	pip-compile requirements.in >requirements.txt
