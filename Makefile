@@ -79,7 +79,7 @@ dist: clean docs
 
 install: clean
 	python setup.py bdist_wheel
-	pip install ./dist/bubble-*-py2.py3-none-any.whl
+	pip install ./dist/bubble3-*-py2.py3-none-any.whl
 
 upload_to_testpypi: clean dist
 	twine upload dist/* -r testpypi
