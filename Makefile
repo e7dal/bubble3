@@ -7,7 +7,6 @@ help:
 	@echo "clean-test - remove test and coverage artifacts"
 	@echo "lint - check style with flake8"
 	@echo "behave - behave tests"
-	@echo "behavepyenvs - behave tests in different pyenv enverionments"
 	@echo "test - run tests quickly with the default Python"
 	@echo "coverage - check code coverage quickly with the default Python"
 	@echo "docs - generate Sphinx HTML documentation, including API docs"
@@ -44,8 +43,6 @@ lint:
 behave:
 	behave
 
-behavepyenvs: dist
-	bin/behave_pyversions_in_pyenv.sh
 
 test:
 	#python setup.py test
