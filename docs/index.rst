@@ -18,7 +18,7 @@ Contents:
     :maxdepth: 2
 
     intro
-    bubble/index
+    bubble3/index
     version
     modules
     releasing
