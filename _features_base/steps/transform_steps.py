@@ -6,8 +6,8 @@ Created on Nov 10, 2014
 from behave import given, when, then, step
 import json
 
-from bubble.transformer import Transformer
-from bubble.functions import register
+from bubble3.transformer import Transformer
+from bubble3.functions import register
 
 
 

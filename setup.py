@@ -19,7 +19,7 @@ dev_deps = os.path.join(curr_path, 'dev_requirements.txt')
 requirements = open(deps).read()
 test_requirements = open(dev_deps).read()
 
-CODE_DIRECTORY = 'bubble'
+CODE_DIRECTORY = 'bubble3'
 metadata = imp.load_source(
     'metadata', os.path.join(CODE_DIRECTORY, 'metadata.py'))
 
@@ -38,16 +38,16 @@ setup(
     description=metadata.description,
     long_description=readme + '\n\n' + history,
     packages=[
-        'bubble',
-        'bubble.util',
-        'bubble.util.dataset',
-        'bubble.util.store',
-        'bubble.commands',
-        'bubble.clients',
+        'bubble3',
+        'bubble3.util',
+        'bubble3.util.dataset',
+        'bubble3.util.store',
+        'bubble3.commands',
+        'bubble3.clients',
     ],
-    package_dir={'bubble':
-                 'bubble'},
-    py_modules=['bubble'],
+    package_dir={'bubble3':
+                 'bubble3'},
+    py_modules=['bubble3'],
     include_package_data=True,
     install_requires=requirements,
     license="GPL-3.0",
@@ -64,6 +64,7 @@ setup(
     tests_require=test_requirements,
     entry_points='''
         [console_scripts]
-        bubble = bubble.cli:cli
+        bubble = bubble3.cli:cli
+        bubble3 = bubble3.cli:cli
     '''
 )

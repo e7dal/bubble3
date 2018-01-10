@@ -18,7 +18,7 @@ Scenario: load mysrclient.py pull and store should also archive
     And a directory named "./remember/archive"
     And a file named "./mysrcclient.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg

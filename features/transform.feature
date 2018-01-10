@@ -49,7 +49,7 @@ Scenario: Transform pulled data using custom rules and functions
             """
     And a file named "./custom_rule_functions.py" with:
             """
-            from bubble.functions import register
+            from bubble3.functions import register
             def hi(name='world'):
                 return "hello %s:)"%name
             register(hi,'hello')
@@ -127,7 +127,7 @@ Scenario: Transform pulled data using custom rules and functions,internal value
             """
     And a file named "./custom_rule_functions.py" with:
             """
-            from bubble.functions import register
+            from bubble3.functions import register
             def hi(name='world'):
                 return "hello %s:)"%name
             register(hi,'hello')

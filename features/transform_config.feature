@@ -40,7 +40,7 @@ Scenario: Transform pulled data using custom rules and functions
             """
     And a file named "./custom_rule_functions.py" with:
             """
-            from bubble.functions import register
+            from bubble3.functions import register
             @register
             def as_is(inp):
                 return inp

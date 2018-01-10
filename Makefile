@@ -37,7 +37,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 bubble
+	flake8 bubble3
 	# flake8 bubble tests
 
 behave:
@@ -49,7 +49,7 @@ test:
 	echo "no unit tests yet :( use behave :)"
 
 coverage:
-	coverage run --source bubble -m behave
+	coverage run --source bubble3 -m behave
 	# coverage run --source bubble setup.py test
 	coverage report -m
 	coverage html
@@ -58,7 +58,7 @@ coverage:
 docs:
 	rm -f docs/bubble.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ bubble
+	sphinx-apidoc -o docs/ bubble3
 	$(MAKE) -C docs clean html singlehtml man -b
 	echo "open file://`pwd`/build/docs/html/index.html"
 	echo "open file://`pwd`/build/docs/singlehtml/index.html"
@@ -70,7 +70,7 @@ docs:
 
 version:
 	echo `date +%Y.%m.%d` >VERSION.txt
-	sed -i "s/^version =.*/version = \"`date +%Y.%m.%d`\"/" bubble/metadata.py
+	sed -i "s/^version =.*/version = \"`date +%Y.%m.%d`\"/" bubble3/metadata.py
 
 dist: clean docs
 	python setup.py sdist

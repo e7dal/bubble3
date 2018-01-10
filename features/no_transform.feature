@@ -24,7 +24,7 @@ Scenario: Transform pulled data using custom rules and functions
 
     And a file named "./dummy.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
 
             class BubbleClient(Bubble):
                 def __init__(self,cfg=None):

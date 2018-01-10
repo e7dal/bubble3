@@ -27,7 +27,7 @@ Scenario: load mysrclient.py in the Bubble directory, with query method
     And a directory named "./remember/archive"
     And a file named "./mysrcclient.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg

@@ -27,7 +27,7 @@ Scenario: load mysrclient.py in the Bubble directory
     And a directory named "./remember/archive"
     And a file named "./mysrcclient.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg
@@ -85,7 +85,7 @@ Scenario: load mytgtlient.py in the Bubble directory
 
     And a file named "./mytgtclient.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg
