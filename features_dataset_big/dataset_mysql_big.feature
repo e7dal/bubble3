@@ -26,7 +26,7 @@ Scenario: load mysrclient.py pull and store mysql
     And a directory named "./remember/archive"
     And a file named "./mysrcclient.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg
@@ -40,10 +40,10 @@ Scenario: load mysrclient.py pull and store mysql
                         yield it
                     #return ret
             """
-    When I run "bubble pull --amount 10000"
+    When I run "bubble3 pull --amount 10000"
     Then the command output should contain "saved result in dataset[step:pulled][stage:DEV]"
     And the command returncode is "0"
-    When I run "bubble -v0 export -r pulled -p  -i 9999 -a 1 -f tab -c keyC.3.keyDinList"
+    When I run "bubble3 -v0 export -r pulled -p  -i 9999 -a 1 -f tab -c keyC.3.keyDinList"
     Then the command output should contain
           """
           BUBBLE_IDX|keyC.3.keyDinList

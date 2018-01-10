@@ -24,7 +24,7 @@ Scenario: load mysrclient.py pull and store default type sqlite
     And a directory named "./remember/archive"
     And a file named "./myclient.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg
@@ -41,10 +41,10 @@ Scenario: load mysrclient.py pull and store default type sqlite
                     return "pushed"
             """
     When I run "mkdir logs"
-    When I run "bubble -p pump --amount 10000"
+    When I run "bubble3 -p pump --amount 10000"
     Then the command output should contain "Pumping finsished"
     And the command returncode is "0"
-    When I run "bubble -v0 export -r pushed -p  -i 9999 -a 1 -f tab -c input.keyA"
+    When I run "bubble3 -v0 export -r pushed -p  -i 9999 -a 1 -f tab -c input.keyA"
     Then the command output should contain
           """
           BUBBLE_IDX|input.keyA

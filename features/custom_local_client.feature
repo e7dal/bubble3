@@ -37,11 +37,11 @@ Scenario: load mysrclient.py in the Bubble directory
                     return [{"keyA":"A1"},{"keyA":"A2"}]
             """
 
-  When I run "bubble pull"
+  When I run "bubble3 pull"
     Then the command output should contain "pulled [2] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
-  When I run "bubble export --stepresult pulled --select 'keyA' --showkeys -f tab"
+  When I run "bubble3 export --stepresult pulled --select 'keyA' --showkeys -f tab"
     Then the command returncode is "0"
     And the command output should contain:
             """
@@ -94,11 +94,11 @@ Scenario: load mytgtlient.py in the Bubble directory
                                                'k':kwargs})
                     return "OK"
             """
-    When I run "bubble push"
+    When I run "bubble3 push"
     Then the command output should contain "pushed [2] objects"
     Then the command output should contain "remember/pushed_DEV.json"
     And the command returncode is "0"
-    When I run "bubble export --stepresult pushed --select res,input.keyA --showkeys -f tab"
+    When I run "bubble3 export --stepresult pushed --select res,input.keyA --showkeys -f tab"
     Then the command returncode is "0"
     And the command output should contain:
             """

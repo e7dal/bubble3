@@ -45,11 +45,11 @@ Scenario: Transform pulled data using custom rules and functions
             def as_is(inp):
                 return inp
             """
-  When I run "bubble transform"
+  When I run "bubble3 transform"
     Then the command output should contain "Transforming"
     And the command returncode is "0"
     
-    When I run "bubble export -r push -c 'current_stage,src_client,src.CLIENT' -f tab"
+    When I run "bubble3 export -r push -c 'current_stage,src_client,src.CLIENT' -f tab"
       Then the command returncode is "0"
       And the command output should contain:
         """

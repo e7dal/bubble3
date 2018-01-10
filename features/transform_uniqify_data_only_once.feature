@@ -56,13 +56,13 @@ Scenario: Preprocess make uniq pull
     And a file named "./custom_rule_functions.py" with:
             """
             """
-    When I run "bubble pull"
+    When I run "bubble3 pull"
     Then the command output should contain "pulled [2] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
-    When I run "bubble -v 10000 transform"
+    When I run "bubble3 -v 10000 transform"
     Then the command output should contain "Transforming"
-    When I run "bubble export -r uniq_pull -c uid,history_amount -kv -f tab --order uid"
+    When I run "bubble3 export -r uniq_pull -c uid,history_amount -kv -f tab --order uid"
     Then the command returncode is "0"
     And the command output should contain:
             """
@@ -72,9 +72,9 @@ Scenario: Preprocess make uniq pull
             [2]|1
             """
     But note that "doing it again will not add history because of storetimestamp"
-    When I run "bubble -v 10000 transform"
+    When I run "bubble3 -v 10000 transform"
     Then the command output should contain "Transforming"
-    When I run "bubble export -r uniq_pull -c uid,history_amount -kv -f tab --order uid"
+    When I run "bubble3 export -r uniq_pull -c uid,history_amount -kv -f tab --order uid"
     Then the command returncode is "0"
     And the command output should contain:
             """

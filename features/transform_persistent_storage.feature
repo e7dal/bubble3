@@ -51,11 +51,11 @@ Scenario: Transform pulled data using custom rules and functions
             """
             #no define rule functions
             """
-  When I run "bubble transform"
+  When I run "bubble3 transform"
     Then the command output should contain "Transforming"
     And the command returncode is "0"
     
-    When I run "bubble export -r push -c 'pre,pre_yes_it_is_red,post,post_yes_it_is_green_now' -f tab"
+    When I run "bubble3 export -r push -c 'pre,pre_yes_it_is_red,post,post_yes_it_is_green_now' -f tab"
       Then the command returncode is "0"
       And the command output should contain:
           """
@@ -64,7 +64,7 @@ Scenario: Transform pulled data using custom rules and functions
           red|True             |green|True
           """
     
-    When I run "bubble export -r store -c 'fruits.pear.color' -f tab"
+    When I run "bubble3 export -r store -c 'fruits.pear.color' -f tab"
       Then the command returncode is "0"
       And the command output should contain:
           """

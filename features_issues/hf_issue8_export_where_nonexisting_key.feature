@@ -36,7 +36,7 @@ Scenario: running export with where string key:val
                      ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype tab --select 'input.a:a,input.X:X' --where 'input.X:AA'"
+    When I run "bubble3 export   --stepresult pushed --formattype tab --select 'input.a:a,input.X:X' --where 'input.X:AA'"
     Then the command output should contain:
     """
     a |X

@@ -38,14 +38,14 @@ Scenario: Transform pulled data using custom rules and functions
             """
     And a directory named "./remember/archive"
 
-    When I run "bubble pull"
-    When I run "bubble transform"
+    When I run "bubble3 pull"
+    When I run "bubble3 transform"
     Then the command output should contain "There is no transform defined in the configuration"
     And the command returncode is "1"
-    When I run "bubble push"
+    When I run "bubble3 push"
     Then the command output should contain "There is no transform defined in the configuration"
     And the command returncode is "0"
-    When I run "bubble export -r pushed -c input.dummy -f tab -i 142 -a 1"
+    When I run "bubble3 export -r pushed -c input.dummy -f tab -i 142 -a 1"
       Then the command returncode is "0"
       And the command output should contain:
         """

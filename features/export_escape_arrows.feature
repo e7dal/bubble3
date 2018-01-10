@@ -30,7 +30,7 @@ Scenario: running export key string contains arrows ">>>"
                      ]
             }
             """
-  When I run "bubble export   -r pushed -f tab -c input.A___bts_escarrows_B,input.B___bts_escarrows_C -kvp"
+  When I run "bubble3 export   -r pushed -f tab -c input.A___bts_escarrows_B,input.B___bts_escarrows_C -kvp"
     Then the command output should contain:
     """
     BUBBLE_IDX|input.A___bts_escarrows_B|input.B___bts_escarrows_C
@@ -69,7 +69,7 @@ Scenario: running export key string contains arrows ">>>"
                      ]
             }
             """
-  When I run "bubble export   -r pushed -f tab -c input.A___bts_escarrows_B:iAB,input.B___bts_escarrows_C:iBC -kvp"
+  When I run "bubble3 export   -r pushed -f tab -c input.A___bts_escarrows_B:iAB,input.B___bts_escarrows_C:iBC -kvp"
     Then the command output should contain:
     """
     BUBBLE_IDX|iAB|iBC

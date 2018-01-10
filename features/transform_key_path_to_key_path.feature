@@ -51,10 +51,10 @@ Scenario: key path a.b.c should be copied to key path d.e.f
             #no define rule functions
             rule_functions={}
             """
-    When I run "bubble transform"
+    When I run "bubble3 transform"
     Then the command output should contain "Transforming"
     And the command returncode is "0"
-    When I run "bubble export -r push -c 'd.e.f' -f tab"
+    When I run "bubble3 export -r push -c 'd.e.f' -f tab"
       Then the command returncode is "0"
       And the command output should contain:
         """
@@ -124,10 +124,10 @@ Scenario: Transform: key path a.2.c should be copied to key path d.3.f
     And a file named "./custom_rule_functions.py" with:
             """
             """
-    When I run "bubble transform"
+    When I run "bubble3 transform"
     Then the command output should contain "Transforming"
     And the command returncode is "0"
-    When I run "bubble export -r push -c 'where.do.you.want.this?' -f tab"
+    When I run "bubble3 export -r push -c 'where.do.you.want.this?' -f tab"
       Then the command returncode is "0"
       And the command output should contain:
         """

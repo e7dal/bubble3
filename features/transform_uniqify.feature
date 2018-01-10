@@ -48,13 +48,13 @@ Scenario: Preprocess make uniq pull
     And a file named "./custom_rule_functions.py" with:
             """
             """
-  When I run "bubble pull"
+  When I run "bubble3 pull"
     Then the command output should contain "pulled [2] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
-  When I run "bubble -v 10000 transform"
+  When I run "bubble3 -v 10000 transform"
     Then the command output should contain "Transforming"
-  When I run "bubble export -r uniq_pull -c delta.equal,uid,delta.modified.1.from,delta.modified.1.key,delta.modified.1.to -kp -f tab"
+  When I run "bubble3 export -r uniq_pull -c delta.equal,uid,delta.modified.1.from,delta.modified.1.key,delta.modified.1.to -kp -f tab"
     Then the command returncode is "0"
     And the command output should contain:
             """
@@ -63,7 +63,7 @@ Scenario: Preprocess make uniq pull
             0         |False      |[1]|me:first             |name                |me:last
 
             """
-    When I run "bubble export -r push -c name -kvp -f tab"
+    When I run "bubble3 export -r push -c name -kvp -f tab"
     Then the command returncode is "0"
     And the command output should contain:
             """
@@ -120,16 +120,16 @@ Scenario: Preprocess make unig multiple keys
     And a file named "./custom_rule_functions.py" with:
             """
             """
-  When I run "bubble pull"
+  When I run "bubble3 pull"
     Then the command output should contain "pulled [3] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
     
-    When I run "bubble transform"
+    When I run "bubble3 transform"
     Then the command output should contain "Transforming"
     And the command returncode is "0"
 
-    When I run "bubble export -r uniq_pull -c delta.equal,uid,delta.modified.1.from,delta.modified.1.key,delta.modified.1.to -kv -f tab --order uid:+"
+    When I run "bubble3 export -r uniq_pull -c delta.equal,uid,delta.modified.1.from,delta.modified.1.key,delta.modified.1.to -kv -f tab --order uid:+"
     Then the command returncode is "0"
     And the command output should contain:
             """

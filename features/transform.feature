@@ -54,10 +54,10 @@ Scenario: Transform pulled data using custom rules and functions
                 return "hello %s:)"%name
             register(hi,'hello')
             """
-    When I run "bubble transform"
+    When I run "bubble3 transform"
     Then the command output should contain "Transforming"
     And the command returncode is "0"
-    When I run "bubble export -r push -c 'hello_e7dal' -f tab"
+    When I run "bubble3 export -r push -c 'hello_e7dal' -f tab"
       Then the command returncode is "0"
       And the command output should contain:
         """
@@ -132,10 +132,10 @@ Scenario: Transform pulled data using custom rules and functions,internal value
                 return "hello %s:)"%name
             register(hi,'hello')
             """
-    When I run "bubble transform"
+    When I run "bubble3 transform"
     Then the command output should contain "Transforming"
     And the command returncode is "0"
-    When I run "bubble export -r push -c 'hi,hello_is_hi' -f tab"
+    When I run "bubble3 export -r push -c 'hi,hello_is_hi' -f tab"
       Then the command returncode is "0"
       And the command output should contain:
         """
@@ -146,8 +146,8 @@ Scenario: Transform pulled data using custom rules and functions,internal value
         """
 Scenario: Given a source service in configuration with only DEV
     Given a new working directory
-    When I run "bubble init"
-    When I run "bubble pull"
-    When I run "bubble transform -s PROD"
+    When I run "bubble3 init"
+    When I run "bubble3 pull"
+    When I run "bubble3 transform -s PROD"
     Then the command output should contain "There is no STAGE in CFG:PROD"
     And the command returncode is "1"

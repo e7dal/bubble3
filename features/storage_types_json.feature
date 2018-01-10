@@ -31,11 +31,11 @@ Scenario: load mysrclient.py pull and store type json
                         self.say('BC:yielding:%d %d'%(amount,index),stuff=it,verbosity=100)
                         yield it
             """
-    When I run "bubble pull --amount 10"
+    When I run "bubble3 pull --amount 10"
     Then the command output should contain "pulled [10] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
-    When I run "bubble export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList"
+    When I run "bubble3 export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList"
     Then the command returncode is "0"
     And the command output should contain
       """

@@ -34,7 +34,7 @@ Scenario: running export with select string key:alias
                         ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype tab --select 'input.a:first,input.b:b,input.c:second'"
+    When I run "bubble3 export   --stepresult pushed --formattype tab --select 'input.a:first,input.b:b,input.c:second'"
     Then the command output should contain:
     """
     first|b|second

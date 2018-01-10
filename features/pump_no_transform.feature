@@ -1,7 +1,7 @@
 Feature: Bubble pump no transform
 Scenario: Given a target and no transform in configuration
     Given a new working directory
-    When I run "bubble init"
+    When I run "bubble3 init"
     Then the command output should contain "Bubble initialized"
     Given a file named "./config/config.yaml" with:
             """
@@ -18,7 +18,7 @@ Scenario: Given a target and no transform in configuration
                         CLIENT: ./mytgtclient.py
             ...
             """
-    When I run "bubble pump"
+    When I run "bubble3 pump"
     Then the command output should contain "Pushing"
     Then the command output should contain "saved result in ["
     And the command returncode is "0"

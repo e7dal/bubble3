@@ -32,7 +32,7 @@ Scenario: Export pushed data in yaml format
                         ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype yaml --select 'input.a,input.b,input.c'"
+    When I run "bubble3 export   --stepresult pushed --formattype yaml --select 'input.a,input.b,input.c'"
     Then the command output should contain "export/export_pushed_DEV.yaml"
     And the command returncode is "0"
     And the file "export/export_pushed_DEV.yaml" should contain:
@@ -75,7 +75,7 @@ Scenario: Export pushed data in csv format
                         ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype csv --select 'input.a,input.b,input.c'"
+    When I run "bubble3 export   --stepresult pushed --formattype csv --select 'input.a,input.b,input.c'"
     Then the command output should contain "export/export_pushed_DEV.csv"
     And the command returncode is "0"
     And the file "export/export_pushed_DEV.csv" should contain:
@@ -118,7 +118,7 @@ Scenario: Export pushed data in json format
                         ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype json --select 'input.a,input.c'"
+    When I run "bubble3 export   --stepresult pushed --formattype json --select 'input.a,input.c'"
     Then the command output should contain "export/export_pushed_DEV.json"
     And the command returncode is "0"
     #there is no guranteed order in file for ujson..
@@ -162,7 +162,7 @@ Scenario: Export pushed data in tablib default format to stdout
                         ]
             }
                         """
-    When I run "bubble export   --stepresult pushed --formattype tab --select 'input.b,input.c,input.b'"
+    When I run "bubble3 export   --stepresult pushed --formattype tab --select 'input.b,input.c,input.b'"
     Then the command output should contain:
     """
     input.b|input.c|input.b
@@ -210,7 +210,7 @@ Scenario: Export pushed data in csv format, weird stuff
                         ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype csv --select 'input.a:a,input.X:X,input.b:b,input.c:c'"
+    When I run "bubble3 export   --stepresult pushed --formattype csv --select 'input.a:a,input.X:X,input.b:b,input.c:c'"
     Then the command output should contain "export/export_pushed_DEV.csv"
     And the command returncode is "0"
     And the file "export/export_pushed_DEV.csv" should contain:

@@ -23,7 +23,7 @@ Scenario: load mysrclient.py pull and store default type sqlite
     And a directory named "./remember/archive"
     And a file named "./myclient.py" with:
             """
-            from bubble import Bubble
+            from bubble3 import Bubble
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg
@@ -40,10 +40,10 @@ Scenario: load mysrclient.py pull and store default type sqlite
                     self.say('BC: pushing')
                     return {'res':'just say OK'}
             """
-    When I run "bubble pull --amount 10000"
+    When I run "bubble3 pull --amount 10000"
     Then the command output should contain "saved result in dataset[step:pulled][stage:DEV]"
     And the command returncode is "0"
-    When I run "bubble -v0 export -r pulled -p  -i 9999 -a 1 -f tab -c keyC.3.keyDinList"
+    When I run "bubble3 -v0 export -r pulled -p  -i 9999 -a 1 -f tab -c keyC.3.keyDinList"
     Then the command output should contain
           """
           BUBBLE_IDX|keyC.3.keyDinList
@@ -51,8 +51,8 @@ Scenario: load mysrclient.py pull and store default type sqlite
           9999      |D_9999
           """
     And the command returncode is "0"
-    When I run "bubble push"
-    When I run "bubble -v0 export -r pushed -p  -i 9999 -a 1 -f tab -c res.res"
+    When I run "bubble3 push"
+    When I run "bubble3 -v0 export -r pushed -p  -i 9999 -a 1 -f tab -c res.res"
     Then the command output should contain
           """
           BUBBLE_IDX|res.res

@@ -40,11 +40,11 @@ Scenario: load mysrclient.py in the Bubble directory, with query method
                     return {"queryID":"ID_"+id}
             """
 
-  When I run "bubble pull"
+  When I run "bubble3 pull"
     Then the command output should contain "pulled [2] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
-  When I run "bubble export --stepresult pulled --select 'keyA' --showkeys -f tab"
+  When I run "bubble3 export --stepresult pulled --select 'keyA' --showkeys -f tab"
     Then the command returncode is "0"
     And the command output should contain:
             """
@@ -53,11 +53,11 @@ Scenario: load mysrclient.py in the Bubble directory, with query method
             A1
             A2
             """
-  When I run "bubble pull -q some_id"
+  When I run "bubble3 pull -q some_id"
     Then the command output should contain "pulled [1] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
-  When I run "bubble export --stepresult pulled --select 'queryID' -kv -f tab"
+  When I run "bubble3 export --stepresult pulled --select 'queryID' -kv -f tab"
     Then the command returncode is "0"
     And the command output should contain:
             """

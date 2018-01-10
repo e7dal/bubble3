@@ -97,7 +97,7 @@ def slicing(mystr,start=0,stop=-1,step=1):
 ################################################################################
 #register
 ################################################################################
-from bubble.functions import register
+from bubble3.functions import register
 #, trace,timer
 
 register(replace_hello_with_goodbye)
@@ -120,7 +120,7 @@ register(slicing)
 def get_example_client_pull():
     """dummy client with pull method"""
     example = """
-from bubble import Bubble
+from bubble3 import Bubble
 class MyFancyHelloPuller(Bubble):
     def say_hello(self,i=0):
         return 'Hello, ' + str(i)
@@ -157,7 +157,7 @@ if __name__ == '__main__':
 def get_example_client_push():
     """dummy client with push method"""
     example = """
-from bubble import Bubble
+from bubble3 import Bubble
 class MyFancyGoodbyePusher(Bubble):
     def say_goodbye(self,i=0):
         return 'Goodbye, '+str(i)

@@ -31,11 +31,11 @@ Scenario: load mysrclient.py pull and store type jsonlines
                         self.say('BC:yielding:%d %d'%(amount,index),stuff=it,verbosity=100)
                         yield it
             """
-    When I run "bubble pull"
+    When I run "bubble3 pull"
     Then the command output should contain "pulled [100000] objects"
     Then the command output should contain "remember/pulled_DEV.jsonl"
     And the command returncode is "0"
-    When I run "bubble export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList -a 10"
+    When I run "bubble3 export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList -a 10"
     Then the command returncode is "0"
     And the command output should contain
       """
@@ -52,7 +52,7 @@ Scenario: load mysrclient.py pull and store type jsonlines
       8         |A_8 |B_8 |c     |66    |D_8
       9         |A_9 |B_9 |c     |66    |D_9
       """
-    When I run "bubble export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList -i 99990 -a 10"
+    When I run "bubble3 export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList -i 99990 -a 10"
     Then the command returncode is "0"
     And the command output should contain
       """

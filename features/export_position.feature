@@ -34,7 +34,7 @@ Scenario: running export with select with position flag
                         ]
             }
             """
-  When I run "bubble export   -r pushed -f tab -c 'input.a:first,input.b:b,input.c:second' -p"
+  When I run "bubble3 export   -r pushed -f tab -c 'input.a:first,input.b:b,input.c:second' -p"
     Then the command output should contain:
     """
     BUBBLE_IDX|first|b|second

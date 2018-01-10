@@ -1,7 +1,7 @@
 Feature: Bubble examples
 Scenario: Show the examples that are available
     Given a new working directory
-    When I run "bubble examples"
+    When I run "bubble3 examples"
         Then the command output should contain
             """
             available example: configuration
@@ -15,7 +15,7 @@ Scenario: Show the examples that are available
 
 Scenario: Show an example by name
     Given a new working directory
-    When I run "bubble examples -n configuration"
+    When I run "bubble3 examples -n configuration"
         Then the command output should contain
             """
             ################################################################################
@@ -33,7 +33,7 @@ Scenario: Show an example by name
 
 Scenario: Show all examples
     Given a new working directory
-    When I run "bubble examples -a"
+    When I run "bubble3 examples -a"
         Then the command output should contain
             """
             ### end of bubble example: configuration

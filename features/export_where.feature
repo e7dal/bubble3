@@ -33,7 +33,7 @@ Scenario: running export with where string key:val
                      ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype tab --select 'input.a:a,input.c:c' --where 'input.a:AA'"
+    When I run "bubble3 export   --stepresult pushed --formattype tab --select 'input.a:a,input.c:c' --where 'input.a:AA'"
     Then the command output should contain:
     """
     a |c
@@ -79,7 +79,7 @@ Scenario: running export with where string key:val,key:val
                         ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype tab --select 'input.b:b,input.c:c' --where 'input.b:B,input.c:C'"
+    When I run "bubble3 export   --stepresult pushed --formattype tab --select 'input.b:b,input.c:c' --where 'input.b:B,input.c:C'"
     Then the command output should contain:
     """
     b    |c       

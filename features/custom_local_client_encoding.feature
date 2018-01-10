@@ -37,11 +37,11 @@ Scenario: load mysrclient.py in the Bubble directory
                     return [{'LATIN SMALL LETTER U WITH DIAERESIS':u"\xfc"}]
             """
 
-  When I run "bubble pull"
+  When I run "bubble3 pull"
     Then the command output should contain "pulled [1] objects"
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
-  When I run "bubble export --stepresult pulled --select 'LATIN SMALL LETTER U WITH DIAERESIS:char' --showkeys -f tab"
+  When I run "bubble3 export --stepresult pulled --select 'LATIN SMALL LETTER U WITH DIAERESIS:char' --showkeys -f tab"
     Then the command returncode is "0"
     And the command output should contain:
             """

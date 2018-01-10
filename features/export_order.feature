@@ -33,7 +33,7 @@ Scenario: running export with order  key:+ (asc) or key:- (desc), or key (defaul
                      ]
             }
             """
-    When I run "bubble export   --stepresult pushed --formattype tab -p -O BUBBLE_IDX"
+    When I run "bubble3 export   --stepresult pushed --formattype tab -p -O BUBBLE_IDX"
     Then the command output should contain:
     """
     BUBBLE_IDX
@@ -44,7 +44,7 @@ Scenario: running export with order  key:+ (asc) or key:- (desc), or key (defaul
     3
     """
     And the command returncode is "0"
-    When I run "bubble export   --stepresult pushed --formattype tab -p -O BUBBLE_IDX:+"
+    When I run "bubble3 export   --stepresult pushed --formattype tab -p -O BUBBLE_IDX:+"
     Then the command output should contain:
     """
     BUBBLE_IDX
@@ -55,7 +55,7 @@ Scenario: running export with order  key:+ (asc) or key:- (desc), or key (defaul
     3
     """
     And the command returncode is "0"
-    When I run "bubble export   --stepresult pushed --formattype tab -p -O BUBBLE_IDX:-"
+    When I run "bubble3 export   --stepresult pushed --formattype tab -p -O BUBBLE_IDX:-"
     Then the command output should contain:
     """
     BUBBLE_IDX

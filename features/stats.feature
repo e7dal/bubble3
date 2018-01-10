@@ -12,8 +12,8 @@ Scenario: No errors should print OK
               "pushed_stat_error_count": 0
               }]}
             """
-    When I run "bubble init"
-  When I run "bubble stats --monitor nagios --full"
+    When I run "bubble3 init"
+  When I run "bubble3 stats --monitor nagios --full"
     Then the command output should contain "Ok - pull: 1000 0 transform: 1000  0 push: 1000 0"
     And the command returncode is "0"
 
@@ -30,8 +30,8 @@ Scenario: No Errors and different totals should print Warning
             "pushed_stat_error_count": 0
             }]}
             """
-    When I run "bubble init"
-    When I run "bubble stats --monitor nagios"
+    When I run "bubble3 init"
+    When I run "bubble3 stats --monitor nagios"
     Then the command output should contain "Warning - pull: 1000 0 transform: 800  0 push: 1200 0"
     And the command returncode is "1"
 
@@ -48,8 +48,8 @@ Scenario: Errors should print Critical
             "pushed_stat_error_count": 10
             }]}
             """
-    When I run "bubble init"
-    When I run "bubble stats --monitor nagios"
+    When I run "bubble3 init"
+    When I run "bubble3 stats --monitor nagios"
     Then the command output should contain "Critical - pull: 1000 10 transform: 1000  10 push: 1000 10"
     And the command returncode is "2"
 
@@ -59,7 +59,7 @@ Scenario: No stats should return Unknown
             """
             {"data":[]}
             """
-    When I run "bubble init"
-    When I run "bubble stats --monitor nagios"
+    When I run "bubble3 init"
+    When I run "bubble3 stats --monitor nagios"
     Then the command output should contain "Unknown"
     And the command returncode is "3"

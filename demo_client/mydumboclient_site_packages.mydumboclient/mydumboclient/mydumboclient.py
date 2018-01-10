@@ -8,7 +8,7 @@ __author__ = 'E. Yildiz'
 __licence__ = 'GPLV3'
 
 
-from bubble import Bubble
+from bubble3 import Bubble
 
 class BubbleClient(Bubble):
     def __init__(self,cfg=None):

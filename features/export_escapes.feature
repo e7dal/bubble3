@@ -32,7 +32,7 @@ Scenario: running export key string contains ": or , or . "
                      ]
             }
             """
-  When I run "bubble export   -r pushed -f tab -c input.A___bts_escsep_B,input.B___bts_escsep_C -kvp"
+  When I run "bubble3 export   -r pushed -f tab -c input.A___bts_escsep_B,input.B___bts_escsep_C -kvp"
     Then the command output should contain:
     """
     BUBBLE_IDX|input.A___bts_escsep_B|input.B___bts_escsep_C
@@ -42,7 +42,7 @@ Scenario: running export key string contains ": or , or . "
     2         |None                  |None
     """
     And the command returncode is "0"
-  When I run "bubble export   -r pushed -f tab -c input.A___bts_esccolon_B,input.B___bts_esccolon_C -kvp"
+  When I run "bubble3 export   -r pushed -f tab -c input.A___bts_esccolon_B,input.B___bts_esccolon_C -kvp"
     Then the command output should contain:
     """
     BUBBLE_IDX|input.A___bts_esccolon_B|input.B___bts_esccolon_C
@@ -52,7 +52,7 @@ Scenario: running export key string contains ": or , or . "
     2         |None                    |None
     """
     And the command returncode is "0"
-  When I run "bubble export   -r pushed -f tab -c input.A___bts_esccomma_B,input.B___bts_esccomma_C -kvp"
+  When I run "bubble3 export   -r pushed -f tab -c input.A___bts_esccomma_B,input.B___bts_esccomma_C -kvp"
     Then the command output should contain:
     """
     BUBBLE_IDX|input.A___bts_esccomma_B|input.B___bts_esccomma_C
@@ -94,7 +94,7 @@ Scenario: running export key string contains ": or , or . , all escapes in one k
                      ]
             }
             """
-  When I run "bubble export   -r pushed -f tab -c input.A___bts_escsep_B___bts_esccolon_C___bts_esccomma_D -kvp"
+  When I run "bubble3 export   -r pushed -f tab -c input.A___bts_escsep_B___bts_esccolon_C___bts_esccomma_D -kvp"
     Then the command output should contain:
     """
     BUBBLE_IDX|input.A___bts_escsep_B___bts_esccolon_C___bts_esccomma_D
@@ -140,7 +140,7 @@ Scenario: running export key string contains ": or , or . , all escapes in one k
                      ]
             }
             """
-   When I run "bubble export   -r pushed -f tab -c input.A___bts_escsep_B___bts_esccolon_C___bts_esccomma_D.nest.4.li4___bts_escsep_list_item -kvp"
+   When I run "bubble3 export   -r pushed -f tab -c input.A___bts_escsep_B___bts_esccolon_C___bts_esccomma_D.nest.4.li4___bts_escsep_list_item -kvp"
     Then the command output should contain:
     """
     BUBBLE_IDX|input.A___bts_escsep_B___bts_esccolon_C___bts_esccomma_D.nest.4.li4___bts_escsep_list_item
