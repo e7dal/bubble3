@@ -1,1 +1,1 @@
-bubble>=0.8.7
+bubble3
