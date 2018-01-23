@@ -16,9 +16,8 @@ version = "2018.01.10"
 description = 'cli tool to bubble information from one to another service, with rule based transformations ">>>"'
 authors = ['Erdal Yildiz']
 authors_string = ', '.join(authors)
-emails = ['eyildiz@realopenit.nl']
+emails = ['erdalyildiz1974@gmail.com']
 license = 'GPL-3.0'
-copyright = '2016 ' + authors_string
-url = 'https://bubble.realopenit.nl'
-url = 'http://bubble.realopenit.nl'
+copyright = '2018 ' + authors_string
+url = 'https://github.com/e7dal/bubble3'
 
