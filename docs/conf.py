@@ -111,7 +111,7 @@ extlinks = {
     "pypi": ("https://pypi.python.org/pypi/%s", ""),
     "github": ("https://github.com/%s", "github:/"),
     "issue":
-        ("https://github.com/e7dal/bubble/issue/%s", "issue #"),
+        ("https://github.com/e7dal/bubble3/issue/%s", "issue #"),
 }
 
 def setup(app):
@@ -125,9 +125,9 @@ def setup(app):
 # GENERAL CONFIGURATION
 # -----------------------------------------------------------------------------
 # General information about the project.
-project = u"Bubble"
-author  = u"Erdal Yildiz  @ realopenit.nl"
-copyright = u'2016 by %s' % author
+project = u"Bubble3"
+author  = u"Erdal Yildiz  @ "
+copyright = u'2018 by %s' % author
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -142,7 +142,7 @@ version = '.'.join(release.split('.')[0:1])
 
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = '1.2'
+#needs_sphinx = '1.2'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = [ '_templates' ]

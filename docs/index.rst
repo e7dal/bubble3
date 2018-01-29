@@ -33,7 +33,7 @@ Indices and tables
 * :ref:`search`
 
 .. |bubble_logo| image:: _static/bubble_logo.png
-.. _bubble:   http://bubble.realopenit.nl
+.. _bubble3:   https://github.com/e7dal/bubble3
 .. _behave:   http://pypi.python.org/pypi/behave
 .. _behave documentation:  http://pythonhosted.org/behave/
 .. _behave.example: https://github.com/jenisys/behave.example

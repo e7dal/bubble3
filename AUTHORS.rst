@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Erdal Yildiz <eyildiz@realopenit.nl>
+* Erdal Yildiz <ErdalYildiz1974@gmail.com>
 
 Contributors
 ------------
