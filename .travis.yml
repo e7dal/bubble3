@@ -3,7 +3,6 @@ language: python
 python:
   - "3.6"
   - "pypy3"
-  - "3.7-dev"
 
 # command to install dependencies
 install: "pip install -r travis_requirements.txt"
