@@ -21,6 +21,6 @@ Usage
 Requirements
 ------------
 
-- bubble
+- bubble3
 - 
 
