@@ -1,8 +1,8 @@
 # Bubble
 
-[![PyPi status](https://badge.fury.io/py/bubble3.png)](http://badge.fury.io/py/bubble3)
+[![PyPI version](https://badge.fury.io/py/bubble3.svg)](https://badge.fury.io/py/bubble3)
 [![Travis CI status](https://travis-ci.org/e7dal/bubble3.png?branch=master)](https://travis-ci.org/e7dal/bubble3)
-[![Readthedocs Status](https://readthedocs.org/projects/realopenit-bubble/badge/?version=master)](http://bubble3.readthedocs.org/en/latest/?badge=master)
+[![Readthedocs Status](https://readthedocs.org/projects/e7dal-bubble3/badge/?version=master)](http://bubble3.readthedocs.org/en/latest/?badge=master)
 
 Bubble: command line tool, for bubbling information between services
 
@@ -30,14 +30,16 @@ Todo
     - https://en.wikipedia.org/wiki/You_aren't_gonna_need_it
 - run "grep -rin TODO bubble", create a feature, alter code, make it behave,commit,push...
 
-# Inspiration
+Inspiration
+-----------
 
 For a finite-size system to persist in time (to live), it must evolve in such a
 way that it provides easier access to the imposed currents that flow through it.
 http://en.wikipedia.org/wiki/Constructal_law
 
 
-# Contributing
+Contributing
+------------
 Yes, Please:)
 
 
