@@ -2,7 +2,7 @@ Feature: Bubble custom installed client combined with pull and push method in si
 Scenario: load installed source client myclient in site packages
   Given a file named ".bubble" with:
             """
-            bubble=0.1.1
+            bubble=2018.03.29
             """
     And a file named "./config/config.yaml" with:
             """
@@ -25,10 +25,10 @@ Scenario: load installed source client myclient in site packages
             """
 
     And a directory named "./remember/archive"
-  When I run "pip uninstall bubble-dumbo-client -y"
-  When I run "pip install ../demo_client/mydumboclient_site_packages.mydumboclient/dist/bubble_dumbo_client-0.0.1-py2.py3-none-any.whl"
-  When I run "pip list installed |grep bubble-dumbo-client"
-    Then the command output should contain "bubble-dumbo-client (0.0.1)"
+  When I run "pip uninstall bubble3-dumbo-client -y"
+  When I run "pip install ../demo_client/mydumboclient_site_packages.mydumboclient/dist/bubble3_dumbo_client-0.0.1-py2.py3-none-any.whl"
+  When I run "pip list installed |grep bubble3-dumbo-client"
+    Then the command output should contain "bubble3-dumbo-client (0.0.1)"
   When I run "bubble3 pull"
     Then the command output should contain "pulled [143] objects"
     Then the command output should contain "remember/pulled_DEV.json"
