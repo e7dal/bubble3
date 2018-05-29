@@ -126,11 +126,7 @@ class MyFancyHelloPuller(Bubble):
         return 'Hello, ' + str(i)
 
 # alias for the bubble client to be found by the bubble machinery
-class BubbleClient(Bubble):
-    def __init__(self,cfg={}):
-        self.CFG=cfg
-        self.client=MyFancyHelloPuller()
-
+# this needs to a class called BubbleClient
 class BubbleClient(Bubble):
     def __init__(self,cfg={}):
         self.CFG=cfg
