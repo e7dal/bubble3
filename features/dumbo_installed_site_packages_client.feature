@@ -28,7 +28,7 @@ Scenario: load installed source client myclient in site packages
   When I run "pip uninstall bubble3-dumbo-client -y"
   When I run "pip install ../demo_client/mydumboclient_site_packages.mydumboclient/dist/bubble3_dumbo_client-0.0.1-py2.py3-none-any.whl"
   When I run "pip list installed |grep bubble3-dumbo-client"
-    Then the command output should contain "bubble3-dumbo-client     0.0.1"
+    Then the command output should contain "bubble3-dumbo-client"
   When I run "bubble3 pull"
     Then the command output should contain "pulled [143] objects"
     Then the command output should contain "remember/pulled_DEV.json"
