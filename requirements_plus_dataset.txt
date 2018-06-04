@@ -18,6 +18,5 @@ pyyaml==3.11
 simplejson==3.8.2
 six==1.10.0
 sqlalchemy==1.0.12
-structlog==16.0.0
 tablib==0.11.2
 wheel==0.29.0

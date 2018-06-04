@@ -86,8 +86,8 @@ extensions = [
     'autoapi.sphinx',
     'sphinx.ext.coverage',
     'sphinx.ext.todo',
-    'clickdoctools'
 ]
+    # 'clickdoctools'
     # 'sphinxcontrib.programoutput', #removing 
     # 'sphinx.ext.autodoc',
     # 'sphinx.ext.doctest',
