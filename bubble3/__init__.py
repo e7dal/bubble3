@@ -5,20 +5,7 @@ import os
 import sys
 import arrow
 
-#orderdict needed for structlog
-sys_version_str='.'.join((str(s) for s in sys.version_info[0:3]))
-if sys_version_str=='2.6.9':
-    import collections
-    from ordereddict import OrderedDict
-    collections.OrderedDict=OrderedDict
-else:
-    from collections import OrderedDict
-
-
 BUBBLE_START_ARROW=arrow.now()
-
-from structlog import get_logger
-blog = get_logger()
 
 from . import metadata
 
@@ -236,7 +223,7 @@ class Bubble(object):
             if c.co_name not in ignore_line:
                 break
             ff=ff.f_back
-        # print('keeping:',i,c.co_filename,c.co_firstlineno,c.co_name)
+        
         file_line = c.co_filename+':'+str(c.co_firstlineno)
 
         tl_item = {'attime': arrow.now()-BUBBLE_START_ARROW,
@@ -251,8 +238,8 @@ class Bubble(object):
                    'curr_verbose': self.get_verbose(),
                    'curr_verbose_bar':self.get_verbose_bar()
                    }
-        #if not from_cli:
-        blog.info(**tl_item)
+
+        print("###<<<",tl_item,"<<<")
 
 
     def tl_from_child(self, exported_timeline=[]):
