@@ -10,7 +10,6 @@ import six
 
 from .store import put_file, get_file, get_file_name
 from .delta import make_uniq, get_newest_uniq, get_uniq_list
-from .dataset import lod_dump, lod_load
 from ..functions import get_registered_rule_functions, load_custom_functions
 
 
