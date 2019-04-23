@@ -40,7 +40,6 @@ setup(
     packages=[
         'bubble3',
         'bubble3.util',
-        'bubble3.util.dataset',
         'bubble3.util.store',
         'bubble3.commands',
         'bubble3.clients',
