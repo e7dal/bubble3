@@ -1,0 +1,9 @@
+###<<< {'attime': NOTIME, 'name': 'NoName', 'msg': "caught:{'errorLocation': {'file': 'run_script.py',\n                   'full': 'run_script.py -> 7',\n                   'line': 7},\n 'message': 'ZeroDivisionError: division by zero',\n 'stack': [{'file': 'run_script.py',\n            'func': '<module>',\n            'line': 7,\n            'text': 'zerodiv=1/0'}],\n 'was_doing': 'something important'}", 'stuff': None, 'verb': 'CRY', 'verbosity': 1, 'child_level': 0, 'child_name': '', 'from': '/home/rdl/e7dal/bubble3/bubble3/util/catcher.py:7', 'curr_verbose': 1, 'curr_verbose_bar': 1} <<<
+Bubble3: written error to log
+Bubble3: tips for fixing this:
+you should use a debugger
+###<<< {'attime': NOTIME, 'name': 'NoName', 'msg': "caught:{'errorLocation': {'file': 'run_script.py',\n                   'full': 'run_script.py -> 13',\n                   'line': 13},\n 'message': 'ZeroDivisionError: division by zero',\n 'stack': [{'file': 'run_script.py',\n            'func': 'err',\n            'line': 13,\n            'text': 'zerodiv=1/0'}],\n 'was_doing': 'something important'}", 'stuff': None, 'verb': 'CRY', 'verbosity': 1, 'child_level': 0, 'child_name': '', 'from': '/home/rdl/e7dal/bubble3/bubble3/util/catcher.py:7', 'curr_verbose': 2, 'curr_verbose_bar': 1} <<<
+Bubble3: written error to log
+Bubble3: tips for fixing this:
+you should use a debugger
+###<<< {'attime': NOTIME, 'name': 'NoName', 'msg': "ignoring caught:<class 'ZeroDivisionError'>", 'stuff': None, 'verb': 'SAY', 'verbosity': 1, 'child_level': 0, 'child_name': '', 'from': '/home/rdl/e7dal/bubble3/bubble3/util/catcher.py:7', 'curr_verbose': 2, 'curr_verbose_bar': 1} <<<
