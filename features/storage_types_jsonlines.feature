@@ -22,7 +22,7 @@ Scenario: load mysrclient.py pull and store type jsonlines
             class BubbleClient(Bubble):
                 def __init__(self,cfg={}):
                     self.CFG=cfg
-                def pull(self, amount=100000, index=0):
+                def pull(self, amount=1000, index=0):
                     self.say('BC: %d,%d'%(amount,index))
                     for i in range(amount):
                         it={'keyA':'A_'+str(i),
@@ -32,7 +32,7 @@ Scenario: load mysrclient.py pull and store type jsonlines
                         yield it
             """
     When I run "bubble3 pull"
-    Then the command output should contain "pulled [100000] objects"
+    Then the command output should contain "pulled [1000] objects"
     Then the command output should contain "remember/pulled_DEV.jsonl"
     And the command returncode is "0"
     When I run "bubble3 export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList -a 10"
@@ -52,20 +52,20 @@ Scenario: load mysrclient.py pull and store type jsonlines
       8         |A_8 |B_8 |c     |66    |D_8
       9         |A_9 |B_9 |c     |66    |D_9
       """
-    When I run "bubble3 export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList -i 99990 -a 10"
+    When I run "bubble3 export -r pulled -kvp -f tab -c keyA,keyB,keyC.1,keyC.2,keyC.3.keyDinList -i 990 -a 10"
     Then the command returncode is "0"
     And the command output should contain
       """
-      BUBBLE_IDX|keyA   |keyB   |keyC.1|keyC.2|keyC.3.keyDinList
-      ----------|-------|-------|------|------|-----------------
-      99990     |A_99990|B_99990|c     |66    |D_99990
-      99991     |A_99991|B_99991|c     |66    |D_99991
-      99992     |A_99992|B_99992|c     |66    |D_99992
-      99993     |A_99993|B_99993|c     |66    |D_99993
-      99994     |A_99994|B_99994|c     |66    |D_99994
-      99995     |A_99995|B_99995|c     |66    |D_99995
-      99996     |A_99996|B_99996|c     |66    |D_99996
-      99997     |A_99997|B_99997|c     |66    |D_99997
-      99998     |A_99998|B_99998|c     |66    |D_99998
-      99999     |A_99999|B_99999|c     |66    |D_99999
+      BUBBLE_IDX|keyA |keyB |keyC.1|keyC.2|keyC.3.keyDinList
+      ----------|-----|-----|------|------|-----------------
+      990       |A_990|B_990|c     |66    |D_990            
+      991       |A_991|B_991|c     |66    |D_991            
+      992       |A_992|B_992|c     |66    |D_992            
+      993       |A_993|B_993|c     |66    |D_993            
+      994       |A_994|B_994|c     |66    |D_994            
+      995       |A_995|B_995|c     |66    |D_995            
+      996       |A_996|B_996|c     |66    |D_996            
+      997       |A_997|B_997|c     |66    |D_997            
+      998       |A_998|B_998|c     |66    |D_998            
+      999       |A_999|B_999|c     |66    |D_999         
       """
