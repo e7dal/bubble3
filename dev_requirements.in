@@ -1,7 +1,0 @@
-behave
-PyHamcrest
-pip-tools
-flake8
-autoapi
-sphinx-rtd-theme
-coverage
