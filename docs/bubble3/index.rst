@@ -13,7 +13,6 @@ Automated behave test results, link...
 .. toctree::
     :maxdepth: 3
 
-    features/dataset
     features/transform_spec_rules
     features/custom_local_client_with_query_method
     features/stats

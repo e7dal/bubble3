@@ -6,7 +6,6 @@ Subpackages
 
 .. toctree::
 
-    bubble3.util.dataset
     bubble3.util.store
 
 Submodules
