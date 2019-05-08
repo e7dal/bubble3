@@ -52,7 +52,7 @@ class BubbleDoct(dict):
 @inside_try
 def get_config(ctx, yaml_cfg_file='config/config.yaml'):
     ctx.say('get_config:config_file:' + yaml_cfg_file, verbosity=50)
-    ycfg = yaml.load(open(yaml_cfg_file))
+    ycfg = yaml.load(open(yaml_cfg_file),yaml.BaseLoader)
     ctx.say('get_config::ycfg', stuff=ycfg, verbosity=50)
     BCFG = BubbleDoct(ycfg)
     ctx.say('get_config::BCFG', stuff=BCFG, verbosity=50)
