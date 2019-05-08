@@ -1,0 +1,17 @@
+---
+CFG:
+    BUBBLE:
+        DEBUG: True
+        VERBOSE: True
+        STORAGE_TYPE: jsonl
+    DEV:
+        SOURCE:    #pull
+            CLIENT: ./flow.py
+            FROM: "mqtt://user:pw@srcmqtt:port/srctopic/#"
+        TRANSFORM:
+            RULES: config/rules.bubble
+        TARGET:    #push
+            CLIENT: ./flow.py
+            TO: "mqtt://user:pw@tgtmqtt:port/tgttopic/#"
+...
+#please see bubble/docs/configuration
