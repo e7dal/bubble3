@@ -8,7 +8,7 @@ CFG:
     BUBBLE:
         DEBUG: True
         VERBOSE: True
-        STORAGE_TYPE: json
+        STORAGE_TYPE: jsonl
     DEV:
         SOURCE:    #pull
             CLIENT: ./mysrcclient.py
