@@ -182,12 +182,15 @@ class BubbleCli(Bubble):
     # shortcuts for stoplight colors
     def say_green(self, msg, verbosity=0, stuff=None):
         self._say_color(msg, verbosity, stuff, 'green')
+    green=say_green
 
     def say_yellow(self, msg, verbosity=0, stuff=None):
         self._say_color(msg, verbosity, stuff, 'yellow')
+    yellow=say_yellow
 
     def say_red(self, msg, verbosity=0, stuff=None):
         self._say_color(msg, verbosity, stuff, 'red')
+    red=say_red
 
     def __repr__(self):
         return '<BubbleCli %s@%s since: %s>' % (self.name,
