@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 # Part of bubble. See LICENSE file for full copyright and licensing details.
 
-
-import six
 import inspect
 from functools import wraps
 
@@ -65,10 +63,7 @@ def get_try_option(ctx, key):
 def inside_try(func, options={}):
     """ decorator to silence exceptions, for logging
         we want a "safe" fail of the functions """
-    if six.PY2:
-        name = func.func_name
-    else:
-        name = func.__name__
+    name = func.__name__
 
     @wraps(func)
     def silenceit(*args, **kwargs):

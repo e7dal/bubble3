@@ -4,8 +4,6 @@
 
 """store: for getting and putting files """
 import arrow
-import six
-
 from .. import Bubble
 from .flat_dict import flat
 from .buts import buts
@@ -54,10 +52,7 @@ def get_gen_slice(ctx=Bubble(), iterable=[], amount=-1, index=-1):
             yield item
 
     until = index + amount
-    if six.PY2:
-        sli = xrange(index, until)
-    else:
-        sli = range(index, until)
+    sli = range(index, until)
 
     ctx.gbc.say('Get gen slice:range %s' % str(sli), verbosity=1000)
 

@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
 # Part of bubble. See LICENSE file for full copyright and licensing details.
 
 
 """store: for getting and putting files in json format"""
 
 import io
-import six
 from . import BubbleKV
 
 import simplejson as json
@@ -37,12 +35,8 @@ class JsonLinesKV(BubbleKV):
         with io.open(self._file_name, 'w', encoding='utf8') as jsonl_file:
             for item in data['data']:
                 sitem=json.dumps(item,ensure_ascii=False)
-                if six.PY3:
-                    sitem+=u"\n"
-                    jsonl_file.write(sitem)
-                else:
-                    sitem+=b"\n"
-                    jsonl_file.writelines([unicode(sitem)])
+                sitem+=u"\n"
+                jsonl_file.write(sitem)
 
     def _encode_for_try(self, data={}):
         self.say('_encode_for_try', verbosity=10)

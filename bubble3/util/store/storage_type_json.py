@@ -5,7 +5,6 @@
 """store: for getting and putting files in json format"""
 
 import io
-import six
 from . import BubbleKV
 
 import simplejson as json
@@ -31,24 +30,8 @@ class JsonKV(BubbleKV):
 
     def _dump(self, data={}, full_data=True):
         self.say('dumping', verbosity=10)
-        # with open(self._file_name, 'w+') as data_file:
-        #    ret = data_file.write(self._encode(data, ensure_ascii=False))
-        #    return ret
-        # TODO check, if simplejson needs all this six stuff
-        # http://stackoverflow.com/questions/18337407/saving-utf-8-texts-in-json-dumps-as-utf8-not-as-u-escape-sequence
-        if six.PY3:
-            with io.open(self._file_name, 'w', encoding='utf8') as json_file:
-                json.dump(data, json_file, ensure_ascii=False)
-
-        # In Python 3, the built-in open() is an alias for io.open().
-        # Do note that there is a bug in the json module where the ensure_ascii=False flag
-        # can produce a mix of unicode and str objects. The workaround for
-        # Python 2 then is:
-        if six.PY2:
-            with io.open(self._file_name, 'w', encoding='utf8') as json_file:
-                datas = json.dumps(data, ensure_ascii=False)
-                # unicode(data) auto-decodes data to unicode if str
-                json_file.write(unicode(datas))
+        with io.open(self._file_name, 'w', encoding='utf8') as json_file:
+            json.dump(data, json_file, ensure_ascii=False)
 
     def _encode_for_try(self, data={}):
         self.say('_encode_for_try', verbosity=10)

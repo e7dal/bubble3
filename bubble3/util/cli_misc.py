@@ -6,7 +6,6 @@ import click
 import importlib
 import sys
 import os
-import six
 
 from .store import put_file, get_file, get_file_name
 from .delta import make_uniq, get_newest_uniq, get_uniq_list
@@ -35,15 +34,9 @@ def utf8_only(ctx):
     if sys.getdefaultencoding() not in ['UTF8', 'UTF-8', 'utf-8']:
         org_encoding = sys.getdefaultencoding()
         ctx.say('org_encoding=' + org_encoding, verbosity=2)
-        if six.PY2:
-            reload(sys)
-            sys.setdefaultencoding('UTF-8')
-            ctx.say('Bubble: set encoding from [%s] to [%s]' %
-                    (org_encoding,
-                        sys.getdefaultencoding()), verbosity=2)
-        else:
-            importlib.reload(sys)
-            ctx.cry('Bubble: currently working in non UTF8 encoding [%s]' % org_encoding)
+        #still needed, PY3 is always utf-8, or not?
+        importlib.reload(sys)
+        ctx.cry('Bubble: currently working in non UTF8 encoding [%s]' % org_encoding)
 
 
 def get_client(ctx, CLIENT, abs_path=None):
@@ -76,7 +69,6 @@ def get_server(ctx, SERVER, abs_path=None):
 
     try:
         # TODO: if SERVER.endswith('.py'):
-
         if SERVER.startswith('./'):
             ctx.say('loading custom local Bubble Server', verbosity=10)
             c = SERVER.replace('./', '')

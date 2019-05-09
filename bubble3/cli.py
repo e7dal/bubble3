@@ -13,10 +13,6 @@ from .util.cfg import get_config
 from .util.cli_misc import utf8_only, file_exists
 from .util.profiling import start_profile, write_profile
 
-import six
-if six.PY2:
-    from __builtin__ import ImportError
-
 # do not show if verbosity is above current verbose on Bubble(), todo USE magic
 VERBOSE = 0
 # do not show verbosities above the bar, todo USE magic

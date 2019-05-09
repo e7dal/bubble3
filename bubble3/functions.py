@@ -5,7 +5,6 @@
 import os
 import sys
 from functools import wraps
-import six
 import arrow
 
 from . import Bubble
@@ -116,10 +115,7 @@ class RuleFunctions(Bubble):
                      fun_type=FUN_TYPE):
         """actually replace function"""
         if not name:
-            if six.PY2:
-                name = fun.func_name
-            else:
-                name = fun.__name__
+            name = fun.__name__
 
         self.say('adding fun(%s)' % name, verbosity=50)
         self.say('adding fun_type:%s' % fun_type, verbosity=50)
