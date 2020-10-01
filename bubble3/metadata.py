@@ -11,7 +11,7 @@ package = 'bubble3'
 project = 'cli tool to bubble information from one to another service, with rule based transformations, PY3 only version'
 
 #version = '2016.02.23'  #date versioning
-version = "2019.04.23"
+version = "2020.10.01"
 
 description = 'cli tool to bubble information from one to another service, with rule based transformations ">>>"'
 authors = ['Erdal Yildiz']
