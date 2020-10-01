@@ -36,13 +36,8 @@ Scenario: Export pushed data in yaml format
     Then the command output should contain "export/export_pushed_DEV.yaml"
     And the command returncode is "0"
     And the file "export/export_pushed_DEV.yaml" should contain:
-            """
-            - input.a: A
-              input.b: B
-              input.c: C
-            - input.a: D
-              input.b: E
-              input.c: F
+            """- {input.a: A, input.b: B, input.c: C}
+            - {input.a: D, input.b: E, input.c: F}
             """
 
 
