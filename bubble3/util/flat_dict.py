@@ -25,13 +25,14 @@ def flat(ctx, init={}, path='', sep='.', level=1):
     ctx.gbc.say('path:' + path, verbosity=200)
     ctx.gbc.say('sep:' + sep, verbosity=200)
     ctx.gbc.say('level:' + str(level), verbosity=200)
+    bf=buts('flat')
     if not isinstance(init, dict):
         msg = 'don\'t know how to flatten a non-dict'
         ctx.gbc.say(msg, verbosity=200)
-        return {buts('flat'): False,
+        return {bf: False,
                 buts('flat_error'): msg,
                 buts('flat_input'): init}
-    if level == 1 and buts('flat') in init and init[buts('flat')]:
+    if level == 1 and bf in init and init[bf]!=False:
         ctx.gbc.say(
             'already flattened, nothing to do,return unchanged', verbosity=200)
         return init
