@@ -41,7 +41,7 @@ Scenario: util_cather_catch
     When I run "sed -i 's/datetime.timedelta(0, 0, ....)/NOTIME/g' run_result.txt"
     When I run "sed -i 's/".*bubble3/"bubble3/g' expected_output.txt"
     When I run "sed -i 's/".*bubble3/"bubble3/g' run_result.txt"
-    When I run "sed -i 's/datetime.timedelta(0, 0, ....)/NOTIME/g' run_result.txt"
+    When I run "sed -i 's/datetime.timedelta(microseconds=....)/NOTIME/g' run_result.txt"
     When I run "diff --report-identical-files expected_output.txt run_result.txt"
     Then the command output should contain "Files expected_output.txt and run_result.txt are identical"
     And the command returncode is "0"

@@ -61,7 +61,7 @@ Scenario: Preprocess make uniq pull
     Then the command output should contain "remember/pulled_DEV.json"
     And the command returncode is "0"
     When I run "bubble3 -v 10000 transform"
-    Then the command output should contain "Transforming"
+    Then the command output should contain "transformed [2] objects"
     When I run "bubble3 export -r uniq_pull -c uid,history_amount -kv -f tab --order uid"
     Then the command returncode is "0"
     And the command output should contain:
@@ -72,8 +72,8 @@ Scenario: Preprocess make uniq pull
             [2]|1
             """
     But note that "doing it again will not add history because of storetimestamp"
-    When I run "bubble3 -v 10000 transform"
-    Then the command output should contain "Transforming"
+    When I run "bubble3 transform"
+    Then the command output should contain "transformed [2] objects"
     When I run "bubble3 export -r uniq_pull -c uid,history_amount -kv -f tab --order uid"
     Then the command returncode is "0"
     And the command output should contain:

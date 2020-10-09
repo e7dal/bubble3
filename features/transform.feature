@@ -55,7 +55,7 @@ Scenario: Transform pulled data using custom rules and functions
             register(hi,'hello')
             """
     When I run "bubble3 transform"
-    Then the command output should contain "Transforming"
+    Then the command output should contain "transformed [2] objects"
     And the command returncode is "0"
     When I run "bubble3 export -r push -c 'hello_e7dal' -f tab"
       Then the command returncode is "0"
@@ -133,7 +133,7 @@ Scenario: Transform pulled data using custom rules and functions,internal value
             register(hi,'hello')
             """
     When I run "bubble3 transform"
-    Then the command output should contain "Transforming"
+    Then the command output should contain "transformed [2] objects"
     And the command returncode is "0"
     When I run "bubble3 export -r push -c 'hi,hello_is_hi' -f tab"
       Then the command returncode is "0"

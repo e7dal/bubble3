@@ -29,7 +29,7 @@ Scenario: Initializing bubble
 
 Scenario: Initializing bubble with a given name
     Given a new working directory
-    When I run "bubble3 init e7dal"
+    When I run "bubble3 init -n e7dal"
     Then a file named ".bubble" exists
     And the command output should contain "Initialised"
     And the command output should contain "please adjust your configuration file"

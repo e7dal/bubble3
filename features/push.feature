@@ -5,7 +5,7 @@ Scenario: Given a target service in configuration
     When I run "bubble3 pull"
     When I run "bubble3 transform"
     When I run "bubble3 push"
-    Then the command output should contain "Pushing"
+    Then the command output should contain "pushed [43] objects"
     Then the command output should contain "saved result in ["
     And the command returncode is "0"
 

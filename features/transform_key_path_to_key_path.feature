@@ -52,7 +52,7 @@ Scenario: key path a.b.c should be copied to key path d.e.f
             rule_functions={}
             """
     When I run "bubble3 transform"
-    Then the command output should contain "Transforming"
+    Then the command output should contain "transformed [1] objects"
     And the command returncode is "0"
     When I run "bubble3 export -r push -c 'd.e.f' -f tab"
       Then the command returncode is "0"
@@ -125,7 +125,7 @@ Scenario: Transform: key path a.2.c should be copied to key path d.3.f
             """
             """
     When I run "bubble3 transform"
-    Then the command output should contain "Transforming"
+    Then the command output should contain "transformed [1] objects"
     And the command returncode is "0"
     When I run "bubble3 export -r push -c 'where.do.you.want.this?' -f tab"
       Then the command returncode is "0"

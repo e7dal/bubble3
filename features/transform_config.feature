@@ -46,7 +46,7 @@ Scenario: Transform pulled data using custom rules and functions
                 return inp
             """
   When I run "bubble3 transform"
-    Then the command output should contain "Transforming"
+    Then the command output should contain "transformed [1] objects"
     And the command returncode is "0"
     
     When I run "bubble3 export -r push -c 'current_stage,src_client,src.CLIENT' -f tab"

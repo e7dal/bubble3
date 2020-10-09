@@ -19,7 +19,7 @@ Scenario: Given a target and no transform in configuration
             ...
             """
     When I run "bubble3 pump"
-    Then the command output should contain "Pushing"
+    Then the command output should contain "Pumping finished"
     Then the command output should contain "saved result in ["
     And the command returncode is "0"
     
