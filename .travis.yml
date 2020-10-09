@@ -16,3 +16,8 @@ script:
   - bubble --version
   - time behave
   - pip list
+  - echo 'lets see after updated dependencies"
+  - pip install -r dev_requirements.txt -r requirements.txt -e . -U
+  - pip list
+  - time behave
+  - pip list
