@@ -28,6 +28,6 @@ def cli(ctx, amount, index, stage):
         # amount to push can be less (or more)
         res_push = ctx.invoke(push, amount=amount, index=index, stage=stage)
     if res_pull and res_tra and res_push:
-        ctx.obj.say_green('Streaming Pipe finsished')
+        ctx.obj.say_green('Streaming Pipe finished')
         return True
     return False

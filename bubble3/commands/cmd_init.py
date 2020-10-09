@@ -22,10 +22,9 @@ default_given_name = 'BoB'  # Bubble of Bubbles
 
 
 @click.command('init', short_help='Initializes a new bubble.')
-@click.argument('given_name', '-n', required=False, type=str, default=default_given_name)
-@click.option('--demo', '-d', is_flag=True, default=True, help='Create a demo bubble from examples.')
+@click.option('--name', '-n', required=False, type=str, default=default_given_name)
 @pass_bubble
-def cli(ctx, given_name, demo):
+def cli(ctx, name):
     """Initializes a bubble."""
     path = None
     if path is None:
@@ -38,7 +37,7 @@ def cli(ctx, given_name, demo):
                 'There is already a bubble present, will not initialize bubble in:' + path)
             return
         else:
-            given_name = '(((' + given_name + ')))'
+            given_name = '(((' + name + ')))'
             with open(bubble_file_name, 'w') as dot_bubble:
                 dot_bubble.write('bubble=' + metadata.version + '\n')
                 dot_bubble.write('name=' + given_name + '\n')

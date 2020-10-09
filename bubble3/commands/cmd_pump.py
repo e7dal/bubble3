@@ -37,6 +37,6 @@ def cli(ctx, amount, index, stage):
         res_push = ctx.invoke(push, amount=amount, index=index, stage=stage)
 
     if res_pull and res_tra and res_push:
-        ctx.obj.say_green('Pumping finsished')
+        ctx.obj.say_green('Pumping finished')
         return True
     return False
