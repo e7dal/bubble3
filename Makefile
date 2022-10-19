@@ -45,7 +45,8 @@ behave:
 
 test:
 	#python setup.py test
-	echo "no unit tests yet :( use behave :)"
+	echo "the output of smurf is random, so for now just the hello world:) , does it look right?"
+	smurf from "(:hello world" to "merhaba dünya:)"
 
 coverage:
 	coverage run --source bubble3 -m behave
