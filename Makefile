@@ -42,12 +42,10 @@ lint:
 behave:
 	behave
 
-
 test:
 	#python setup.py test
-	echo "the output of smurf is random, so for now just the hello world:) , does it look right?"
-	smurf from "(:hello world" to "merhaba dünya:)"
-
+	echo "no unit tests yet :( use behave :) , try: make behave"
+	
 coverage:
 	coverage run --source bubble3 -m behave
 	# coverage run --source bubble setup.py test
