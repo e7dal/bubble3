@@ -1,7 +1,6 @@
 # Bubble
 
 [![PyPI version](https://badge.fury.io/py/bubble3.svg)](https://badge.fury.io/py/bubble3)
-[![Travis CI status](https://travis-ci.org/e7dal/bubble3.png?branch=master)](https://travis-ci.org/e7dal/bubble3)
 [![Readthedocs Status](https://readthedocs.org/projects/e7dal-bubble3/badge/?version=master)](http://bubble3.readthedocs.org/en/latest/?badge=master)
 
 Bubble: command line tool, for bubbling information between services
