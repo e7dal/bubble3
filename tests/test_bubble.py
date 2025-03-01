@@ -10,7 +10,7 @@ Tests for `bubble` module.
 
 import unittest
 
-from bubble import Bubble
+from bubble3 import Bubble
 
 
 class TestBubble(unittest.TestCase):
